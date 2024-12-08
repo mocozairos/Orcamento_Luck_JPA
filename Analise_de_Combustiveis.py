@@ -187,4 +187,12 @@ df_abastecimentos_mensal = df_abastecimentos.groupby(['ano', 'mes'])[['Distânci
 
 df_abastecimentos_mensal['mes_ano'] = df_abastecimentos_mensal['mes'].astype(str) + '/' + df_abastecimentos_mensal['ano'].astype(str).str[-2:]
 
+st.divider()
+
 grafico_duas_linhas_numero(df_abastecimentos_mensal, 'mes_ano', 'Distância de abastecimento', 'Km Rodado', 'Quantidade', 'Litros Combustível', 'Km Rodado x Litros Consumidos')
+
+st.divider()
+
+st.subheader('Tabela p/ Download')
+
+st.dataframe(df_abastecimentos_mensal, hide_index=True)
