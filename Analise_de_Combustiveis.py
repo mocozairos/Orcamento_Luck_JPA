@@ -195,4 +195,6 @@ st.divider()
 
 st.subheader('Tabela p/ Download')
 
-st.dataframe(df_abastecimentos_mensal, hide_index=True)
+df_tabela = df_abastecimentos_mensal.rename(columns={'Distância de abastecimento': 'Km Rodado', 'Quantidade': 'Litros Consumidos'})
+
+st.dataframe(df_tabela, hide_index=True)
